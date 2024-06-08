@@ -71,6 +71,7 @@ public class SwiftBackgroundLocationPlugin: NSObject, FlutterPlugin, CLLocationM
             running = false
             SwiftBackgroundLocationPlugin.channel?.invokeMethod("location", arguments: "stop_location_service")
             SwiftBackgroundLocationPlugin.locationManager?.stopUpdatingLocation()
+            SwiftBackgroundLocationPlugin.locationManager?.stopMonitoringSignificantLocationChanges()
             result(true)
         }
     }
